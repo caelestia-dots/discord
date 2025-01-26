@@ -1,0 +1,19 @@
+/**
+ * @name Dynamic
+ * @author Soramane
+ * @description A dynamic theme based off of Catppuccin using colours from your wallpaper
+**/
+
+@use "highlights";
+
+@use "sass:color";
+@use "sass:math";
+@use "variables" as *;
+
+$brand: $blue;
+
+@import "theme";
+.theme-light,
+.theme-dark {
+    @include highlights.highlights;
+}
