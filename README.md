@@ -4,25 +4,36 @@ BetterDiscord theme integration for my caelestia dotfiles.
 
 ## Installation
 
-Clone this git repo into your discord client's config directory.
+Use the `install.fish` script in the base of this repo.
+The script will clone the repo to `~/.config/caelestia/discord` (unless your `XDG_CONFIG_HOME` is different)
+and link the themes to your discord client's config folder (you must provide it as the first argument).
 
 E.g. vesktop
 
+From remote:
+
 ```sh
-git clone https://github.com/caelestia-dots/discord.git ~/.config/vesktop
+# The dummy is cause the first arg is set as $0 (or in the case of fish ignored)
+fish -c "$(curl https://raw.githubusercontent.com/caelestia-dots/discord/refs/heads/main/install.fish)" dummy vesktop
 ```
 
-Optionally run `install-arrpc.fish` to install and enable arRPC.
+Local clone:
+
+```sh
+git clone https://github.com/caelestia-dots/discord /tmp/discord
+/tmp/discord/install.fish vesktop
+rm -rf /tmp/discord
+```
 
 ## Usage
 
-Run your discord client with `run.sh <cmd>`.
+Run your discord client with `~/.config/caelestia/discord/run.sh <cmd>`.
 Set your discord client theme to `current.theme.css`. Tt will be under a different name,
-as it is a symlink to another theme. There will be a 2 themes which are the same, it will be one of them.
-By default it is Catpuccin Mocha.
+as it is a symlink to another theme. There will be a 2 themes which are the same, it will be one
+of them (usually the first). By default it is Catpuccin Mocha.
 
 E.g. vesktop
 
 ```sh
-run.sh vesktop
+~/.config/caelestia/discord/run.sh vesktop
 ```
