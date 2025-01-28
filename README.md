@@ -13,8 +13,7 @@ E.g. vesktop
 From remote:
 
 ```sh
-# The dummy is cause the first arg is set as $0 (or in the case of fish ignored)
-fish -c "$(curl https://raw.githubusercontent.com/caelestia-dots/discord/refs/heads/main/install.fish)" dummy vesktop
+fish -c "$(curl https://raw.githubusercontent.com/caelestia-dots/discord/refs/heads/main/install.fish)" vesktop
 ```
 
 Local clone:
