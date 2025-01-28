@@ -27,13 +27,9 @@ rm -rf /tmp/discord
 
 ## Usage
 
-Run your discord client with `~/.config/caelestia/discord/run.sh <cmd>`.
+If using `systemd`, the service will be installed and enabled automatically.
+Otherwise, autostart `$XDG_CONFIG_HOME/caelestia/discord/monitor/inotifywait.fish`.
+
 Set your discord client theme to `current.theme.css`. Tt will be under a different name,
 as it is a symlink to another theme. There will be a 2 themes which are the same, it will be one
 of them (usually the first). By default it is Catpuccin Mocha.
-
-E.g. vesktop
-
-```sh
-~/.config/caelestia/discord/run.sh vesktop
-```
