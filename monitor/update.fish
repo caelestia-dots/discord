@@ -5,4 +5,4 @@ set -l scheme_path $cache/caelestia/scheme/current.txt
 set -l themes_path (dirname (status filename))/../themes
 
 set -l current $themes_path/(cat "$scheme_path").theme.css
-test -f $current && ln -sf $current $themes/current.theme.css || ln -sf $themes_path/mocha.theme.css $themes/current.theme.css
+test -f $current && ln -sf $current $themes_path/current.theme.css || ln -sf $themes_path/mocha.theme.css $themes_path/current.theme.css
