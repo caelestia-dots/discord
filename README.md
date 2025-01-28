@@ -4,25 +4,11 @@ BetterDiscord theme integration for my caelestia dotfiles.
 
 ## Installation
 
-Use the `install.fish` script in the base of this repo.
-The script will clone the repo to `~/.config/caelestia/discord` (unless your `XDG_CONFIG_HOME` is different)
-and link the themes to your discord client's config folder (you must provide it as the first argument).
+Install [`caelestia-scripts`](https://github.com/caelestia-dots/scripts.git),
+then run `caelestia install discord <client_name>`.
 
-E.g. vesktop
-
-From remote:
-
-```sh
-fish -c "$(curl https://raw.githubusercontent.com/caelestia-dots/discord/refs/heads/main/install.fish)" vesktop
-```
-
-Local clone:
-
-```sh
-git clone https://github.com/caelestia-dots/discord /tmp/discord
-/tmp/discord/install.fish vesktop
-rm -rf /tmp/discord
-```
+The `client_name` is the name of the config folder of the discord client.
+For example, for `vesktop` the config folder is `$XDG_CONFIG_HOME/vesktop` so `client_name` is `vesktop`.
 
 ## Usage
 
