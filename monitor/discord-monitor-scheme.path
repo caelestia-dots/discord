@@ -4,3 +4,6 @@ Description=Sync discord and caelestia schemes
 [Path]
 PathModified=%C/caelestia/scheme/current.txt
 Unit=discord-monitor-scheme.Service
+
+[Install]
+WantedBy=default.target
