@@ -1,5 +1,7 @@
 # caelestia-discord
 
+![showcase](https://github.com/caelestia-dots/readme/blob/main/discord/showcase.gif)
+
 BetterDiscord theme integration for my caelestia dotfiles.
 
 ## Installation
