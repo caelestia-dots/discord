@@ -1,14 +1,16 @@
 /**
- * @name midnight (catppuccin macchiato)
- * @description A dark, rounded discord theme. Based on catppuccin macchiato theme (https://github.com/catppuccin/catppuccin).
+ * @name Midnight (Caelestia)
+ * @description A dark, rounded discord theme. Caelestia scheme colours.
  * @author refact0r, esme, anubis
  * @version 1.6.2
  * @invite nz87hXyvcy
  * @website https://github.com/refact0r/midnight-discord
- * @source https://github.com/refact0r/midnight-discord/blob/master/flavors/midnight-catppuccin-macchiato.theme.css
  * @authorId 508863359777505290
  * @authorLink https://www.refact0r.dev
 */
+
+@use "sass:color";
+@use "colours" as c;
 
 /* IMPORTANT: make sure to enable dark mode in discord settings for the theme to apply properly!!! */
 
@@ -20,7 +22,7 @@
     --font: "figtree";
 
     /* top left corner text */
-    --corner-text: "Catppuccin";
+    --corner-text: "Caelestia";
 
     /* thickness of messages divider */
     --divider-thickness: 3px;
@@ -32,30 +34,30 @@
     --streaming-indicator: #c6a0f6; /* change to #593695 for default purple */
 
     /* accent colors */
-    --accent-1: hsl(234, 82%, 85%); /* links */
-    --accent-2: hsl(234, 82%, 85%); /* general unread/mention elements */
-    --accent-3: hsl(234, 82%, 85%); /* accent buttons */
-    --accent-4: hsl(234, 68%, 77%); /* accent buttons when hovered */
-    --accent-5: hsl(234, 52%, 69%); /* accent buttons when clicked */
-    --mention: hsla(234, 67%, 77%, 0.1); /* mentions & mention messages */
-    --mention-hover: hsla(234, 67%, 77%, 0.05); /* mentions & mention messages when hovered */
+    --accent-1: #{c.$lavender}; /* links */
+    --accent-2: #{c.$lavender}; /* general unread/mention elements */
+    --accent-3: #{c.$lavender}; /* accent buttons */
+    --accent-4: #{color.change(c.$lavender, $saturation: 68%, $lightness: 77%)}; /* accent buttons when hovered */
+    --accent-5: #{color.change(c.$lavender, $saturation: 52%, $lightness: 69%)}; /* accent buttons when clicked */
+    --mention: #{color.change(c.$lavender, $saturation: 67%, $lightness: 77%, $alpha: 0.1)}; /* mentions & mention messages */
+    --mention-hover: #{color.change(c.$lavender, $saturation: 67%, $lightness: 77%, $alpha: 0.05)}; /* mentions & mention messages when hovered */
 
     /* text colors */
-    --text-0: var(--bg-4); /* text on colored elements */
-    --text-1: hsl(221, 44%, 95%); /* bright text on colored elements */
-    --text-2: hsl(227, 68%, 88%); /* headings and important text */
-    --text-3: hsl(227, 27%, 72%); /* normal text */
-    --text-4: hsl(228, 15%, 57%); /* icon buttons and channels */
-    --text-5: hsl(230, 14%, 41%); /* muted channels/chats and timestamps */
+    --text-0: #{c.$text}; /* text on colored elements */
+    --text-1: #{color.change(c.$text, $lightness: 95%)}; /* bright text on colored elements */
+    --text-2: #{color.change(c.$text, $lightness: 88%)}; /* headings and important text */
+    --text-3: #{color.change(c.$text, $lightness: 80%)}; /* normal text */
+    --text-4: #{c.$overlay1}; /* icon buttons and channels */
+    --text-5: #{c.$subtext0}; /* muted channels/chats and timestamps */
 
     /* background and dark colors */
-    --bg-1: hsl(231, 16%, 34%); /* dark buttons when clicked */
-    --bg-2: hsl(230, 19%, 26%); /* dark buttons */
-    --bg-3: hsl(233, 23%, 15%); /* spacing, secondary elements */
-    --bg-4: hsl(232, 23%, 18%); /* main background color */
-    --hover: hsla(229, 15%, 53%, 0.1); /* channels and buttons when hovered */
-    --active: hsla(235, 15%, 53%, 0.2); /* channels and buttons when clicked or selected */
-    --message-hover: hsla(232, 0%, 0%, 0.1); /* messages when hovered */
+    --bg-1: #{c.$surface1}; /* dark buttons when clicked */
+    --bg-2: #{c.$surface0}; /* dark buttons */
+    --bg-3: #{c.$mantle}; /* spacing, secondary elements */
+    --bg-4: #{c.$base}; /* main background color */
+    --hover: #{color.change(c.$overlay1, $alpha: 0.1)}; /* channels and buttons when hovered */
+    --active: #{color.change(c.$overlay1, $alpha: 0.2)}; /* channels and buttons when clicked or selected */
+    --message-hover: rgba(0, 0, 0, 0.1); /* messages when hovered */
 
     /* amount of spacing and padding */
     --spacing: 12px;
@@ -78,8 +80,8 @@
     /* direct messages moon icon */
     /* change to block to show, none to hide */
     --discord-icon: none; /* discord icon */
-    --moon-icon: none; /* moon icon */
-    --moon-icon-url: none; /* custom icon url */
+    --moon-icon: block; /* moon icon */
+    --moon-icon-url: url("https://upload.wikimedia.org/wikipedia/commons/c/c4/Font_Awesome_5_solid_moon.svg"); /* custom icon url */
     --moon-icon-size: auto;
 
     /* filter uncolorable elements to fit theme */
@@ -91,12 +93,5 @@
     /* choose style for window control buttons (minimize-maximize-close) */
     /* block to show, none to hide; choose only one to show!*/
     --windows-nav: none; /* default windows-style buttons */
-    --custom-nav: block; /* custom mac-style buttons */
-}
-
-/* catppuccin icon */
-.childWrapper__6e9f8:has(> svg:not(.favoriteIcon_dcc7a4)) {
-    background: url("https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png");
-    background-color: transparent !important;
-    background-size: cover;
+    --custom-nav: none; /* custom mac-style buttons */
 }

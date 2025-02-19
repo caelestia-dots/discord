@@ -17,6 +17,5 @@ For example, for `vesktop` the config folder is `$XDG_CONFIG_HOME/vesktop` so `c
 If using `systemd`, the service will be installed and enabled automatically.
 Otherwise, autostart `$XDG_CONFIG_HOME/caelestia/discord/monitor/inotifywait.fish`.
 
-Set your discord client theme to `current.theme.css`. Tt will be under a different name,
-as it is a symlink to another theme. There will be a 2 themes which are the same, it will be one
-of them (usually the first). By default it is Catpuccin Mocha.
+Set your discord client theme to `Midnight (Caelestia)`. If it doesn't exist, try setting your
+caelestia scheme via `caelestia scheme <name>` first to generate the theme file.
