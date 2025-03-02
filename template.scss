@@ -34,19 +34,19 @@
     --streaming-indicator: #c6a0f6; /* change to #593695 for default purple */
 
     /* accent colors */
-    --accent-1: #{c.$lavender}; /* links */
-    --accent-2: #{c.$lavender}; /* general unread/mention elements */
-    --accent-3: #{c.$lavender}; /* accent buttons */
-    --accent-4: #{color.change(c.$lavender, $saturation: 68%, $lightness: 77%)}; /* accent buttons when hovered */
-    --accent-5: #{color.change(c.$lavender, $saturation: 52%, $lightness: 69%)}; /* accent buttons when clicked */
-    --mention: #{color.change(c.$lavender, $saturation: 67%, $lightness: 77%, $alpha: 0.1)}; /* mentions & mention messages */
-    --mention-hover: #{color.change(c.$lavender, $saturation: 67%, $lightness: 77%, $alpha: 0.05)}; /* mentions & mention messages when hovered */
+    --accent-1: #{c.$accent}; /* links */
+    --accent-2: #{c.$accent}; /* general unread/mention elements */
+    --accent-3: #{c.$accent}; /* accent buttons */
+    --accent-4: #{color.adjust(c.$accent, $lightness: 8%)}; /* accent buttons when hovered */
+    --accent-5: #{color.adjust(c.$accent, $lightness: 4%)}; /* accent buttons when clicked */
+    --mention: #{color.change(color.adjust(c.$accent, $lightness: 8%), $alpha: 0.1)}; /* mentions & mention messages */
+    --mention-hover: #{color.change(color.adjust(c.$accent, $lightness: 8%), $alpha: 0.05)}; /* mentions & mention messages when hovered */
 
     /* text colors */
     --text-0: #{c.$text}; /* text on colored elements */
-    --text-1: #{color.change(c.$text, $lightness: 95%)}; /* bright text on colored elements */
-    --text-2: #{color.change(c.$text, $lightness: 88%)}; /* headings and important text */
-    --text-3: #{color.change(c.$text, $lightness: 80%)}; /* normal text */
+    --text-1: #{color.adjust(c.$text, $lightness: 5%)}; /* bright text on colored elements */
+    --text-2: #{color.adjust(c.$text, $lightness: -2%)}; /* headings and important text */
+    --text-3: #{color.adjust(c.$text, $lightness: -8%)}; /* normal text */
     --text-4: #{c.$overlay1}; /* icon buttons and channels */
     --text-5: #{c.$subtext0}; /* muted channels/chats and timestamps */
 
