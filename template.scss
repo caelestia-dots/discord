@@ -34,13 +34,13 @@
     --streaming-indicator: #c6a0f6; /* change to #593695 for default purple */
 
     /* accent colors */
-    --accent-1: #{c.$accent}; /* links */
-    --accent-2: #{c.$accent}; /* general unread/mention elements */
-    --accent-3: #{c.$accent}; /* accent buttons */
-    --accent-4: #{color.adjust(c.$accent, $lightness: 8%)}; /* accent buttons when hovered */
-    --accent-5: #{color.adjust(c.$accent, $lightness: 4%)}; /* accent buttons when clicked */
-    --mention: #{color.change(color.adjust(c.$accent, $lightness: 8%), $alpha: 0.1)}; /* mentions & mention messages */
-    --mention-hover: #{color.change(color.adjust(c.$accent, $lightness: 8%), $alpha: 0.05)}; /* mentions & mention messages when hovered */
+    --accent-1: #{c.$primary}; /* links */
+    --accent-2: #{c.$primary}; /* general unread/mention elements */
+    --accent-3: #{c.$primary}; /* accent buttons */
+    --accent-4: #{color.adjust(c.$primary, $lightness: 8%)}; /* accent buttons when hovered */
+    --accent-5: #{color.adjust(c.$primary, $lightness: 4%)}; /* accent buttons when clicked */
+    --mention: #{color.change(color.adjust(c.$primary, $lightness: 8%), $alpha: 0.1)}; /* mentions & mention messages */
+    --mention-hover: #{color.change(color.adjust(c.$primary, $lightness: 8%), $alpha: 0.05)}; /* mentions & mention messages when hovered */
 
     /* text colors */
     --text-0: #{c.$text}; /* text on colored elements */
