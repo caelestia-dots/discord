@@ -9,6 +9,15 @@ BetterDiscord theme integration for my caelestia dotfiles.
 Install [`caelestia-scripts`](https://github.com/caelestia-dots/scripts.git),
 then run `caelestia install discord`.
 
+> [!WARNING]
+> If you do not have access to the new Discord UI, manually clone the branch `old-ui`
+> of [`caelestia-discord`](https://github.com/caelestia-dots/discord.git) to
+> `$XDG_DATA_HOME/caelestia/discord` and then run `caelestia install discord`.
+>
+> ```sh
+> git clone -b old-ui https://github.com/caelestia-dots/discord.git $XDG_DATA_HOME/caelestia/discord
+> ```
+
 ## Usage
 
 If using `systemd`, the service will be installed and enabled automatically.
