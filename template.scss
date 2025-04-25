@@ -62,11 +62,11 @@ body {
 
     /* transparency/blur options */
     /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
-    --transparency-tweaks: off; /* turn on to remove some elements for better transparency */
+    --transparency-tweaks: on; /* turn on to remove some elements for better transparency */
     --remove-bg-layer: off; /* turn on to remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
-    --panel-blur: off; /* turn on to blur the background of panels */
+    --panel-blur: on; /* turn on to blur the background of panels */
     --blur-amount: 12px; /* amount of blur */
-    --bg-floating: var(--bg-3); /* you can set this to a more opaque color if floating panels look too transparent */
+    --bg-floating: #{color.change(c.$base, $alpha: 0.88)}; /* you can set this to a more opaque color if floating panels look too transparent */
 
     /* chatbar options */
     --custom-chatbar: aligned; /* off: default chatbar, aligned: chatbar aligned with the user panel, separated: chatbar separated from chat */
@@ -90,10 +90,10 @@ body {
     --text-5: #{c.$subtext0}; /* muted channels/chats and timestamps */
 
     /* background and dark colors */
-    --bg-1: #{c.$surface1}; /* dark buttons when clicked */
-    --bg-2: #{c.$surface0}; /* dark buttons */
-    --bg-3: #{c.$mantle}; /* spacing, secondary elements */
-    --bg-4: #{c.$base}; /* main background color */
+    --bg-1: #{color.change(c.$surface2, $alpha: 0.58)}; /* dark buttons when clicked */
+    --bg-2: #{color.change(c.$surface1, $alpha: 0.58)}; /* dark buttons */
+    --bg-3: #{color.change(c.$base, $alpha: 0.58)}; /* spacing, secondary elements */
+    --bg-4: #{color.change(c.$base, $alpha: 0.1)}; /* main background color */
     --hover: #{color.change(c.$overlay1, $alpha: 0.1)}; /* channels and buttons when hovered */
     --active: #{color.change(c.$overlay1, $alpha: 0.2)}; /* channels and buttons when clicked or selected */
     --active-2: #{color.change(c.$overlay1, $alpha: 0.3)}; /* extra state for transparent buttons */
