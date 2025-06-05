@@ -14,6 +14,8 @@
 
 @import url("https://refact0r.github.io/midnight-discord/build/midnight.css");
 
+$transparency: false;
+
 body {
     /* font, change to '' for default discord font */
     --font: "figtree";
@@ -62,11 +64,11 @@ body {
 
     /* transparency/blur options */
     /* NOTE: TO USE TRANSPARENCY/BLUR, YOU MUST HAVE TRANSPARENT BG COLORS. FOR EXAMPLE: --bg-4: hsla(220, 15%, 10%, 0.7); */
-    --transparency-tweaks: on; /* turn on to remove some elements for better transparency */
+    --transparency-tweaks: #{if($transparency, on, off)}; /* turn on to remove some elements for better transparency */
     --remove-bg-layer: off; /* turn on to remove the base --bg-3 layer for use with window transparency (WILL OVERRIDE BACKGROUND IMAGE) */
-    --panel-blur: on; /* turn on to blur the background of panels */
+    --panel-blur: #{if($transparency, on, off)}; /* turn on to blur the background of panels */
     --blur-amount: 12px; /* amount of blur */
-    --bg-floating: #{color.change(c.$base, $alpha: 0.88)}; /* you can set this to a more opaque color if floating panels look too transparent */
+    --bg-floating: #{color.change(c.$base, $alpha: if($transparency, 0.88, 1))}; /* you can set this to a more opaque color if floating panels look too transparent */
 
     /* chatbar options */
     --custom-chatbar: aligned; /* off: default chatbar, aligned: chatbar aligned with the user panel, separated: chatbar separated from chat */
@@ -82,22 +84,22 @@ body {
     --colors: on; /* turn off to use discord default colors */
 
     /* text colors */
-    --text-0: #{c.$base}; /* text on colored elements */
-    --text-1: #{color.scale(c.$text, $lightness: 10%)}; /* bright text on colored elements */
-    --text-2: #{color.scale(c.$text, $lightness: 5%)}; /* headings and important text */
-    --text-3: #{c.$text}; /* normal text */
-    --text-4: #{c.$overlay1}; /* icon buttons and channels */
-    --text-5: #{c.$subtext0}; /* muted channels/chats and timestamps */
+    --text-0: #{c.$onPrimary}; /* text on colored elements */
+    --text-1: #{color.scale(c.$onSurface, $lightness: 10%)}; /* bright text on colored elements */
+    --text-2: #{color.scale(c.$onSurface, $lightness: 5%)}; /* headings and important text */
+    --text-3: #{c.$onSurface}; /* normal text */
+    --text-4: #{c.$outline}; /* icon buttons and channels */
+    --text-5: #{c.$outline}; /* muted channels/chats and timestamps */
 
     /* background and dark colors */
-    --bg-1: #{color.change(c.$surface2, $alpha: 0.58)}; /* dark buttons when clicked */
-    --bg-2: #{color.change(c.$surface1, $alpha: 0.58)}; /* dark buttons */
-    --bg-3: #{color.change(c.$base, $alpha: 0.58)}; /* spacing, secondary elements */
-    --bg-4: #{color.change(c.$base, $alpha: 0.1)}; /* main background color */
-    --hover: #{color.change(c.$overlay1, $alpha: 0.1)}; /* channels and buttons when hovered */
-    --active: #{color.change(c.$overlay1, $alpha: 0.2)}; /* channels and buttons when clicked or selected */
-    --active-2: #{color.change(c.$overlay1, $alpha: 0.3)}; /* extra state for transparent buttons */
-    --message-hover: #{color.change(c.$overlay0, $alpha: 0.1)}; /* messages when hovered */
+    --bg-1: #{color.change(c.$surfaceContainerHigh, $alpha: if($transparency, 0.58, 1))}; /* dark buttons when clicked */
+    --bg-2: #{color.change(c.$surfaceContainer, $alpha: if($transparency, 0.58, 1))}; /* dark buttons */
+    --bg-3: #{color.change(c.$surface, $alpha: if($transparency, 0.58, 1))}; /* spacing, secondary elements */
+    --bg-4: #{color.change(c.$surface, $alpha: if($transparency, 0.1, 1))}; /* main background color */
+    --hover: #{color.change(c.$onSurface, $alpha: 0.08)}; /* channels and buttons when hovered */
+    --active: #{color.change(c.$onSurface, $alpha: 0.1)}; /* channels and buttons when clicked or selected */
+    --active-2: #{color.change(c.$onSurface, $alpha: 0.2)}; /* extra state for transparent buttons */
+    --message-hover: #{color.change(c.$onSurface, $alpha: 0.08)}; /* messages when hovered */
 
     /* accent colors */
     --accent-1: var(--blue-1); /* links and other accent text */
@@ -135,16 +137,16 @@ body {
     --offline: var(--text-4); /* change to #83838b for default offline color */
 
     /* border colors */
-    --border-light: #{color.change(c.$overlay0, $alpha: 0.05)}; /* light border color */
-    --border: #{color.change(c.$overlay0, $alpha: 0.1)}; /* normal border color */
-    --button-border: #{color.change(c.$overlay0, $alpha: 0.05)}; /* neutral border color of buttons */
+    --border-light: #{color.change(c.$outline, $alpha: 0.05)}; /* light border color */
+    --border: #{color.change(c.$outline, $alpha: 0.1)}; /* normal border color */
+    --button-border: #{color.change(c.$outline, $alpha: 0.05)}; /* neutral border color of buttons */
 
     /* base colors */
-    --red-1: #{c.$red};
-    --red-2: #{color.scale(c.$red, $lightness: -5%)};
-    --red-3: #{color.scale(c.$red, $lightness: -10%)};
-    --red-4: #{color.scale(c.$red, $lightness: -15%)};
-    --red-5: #{color.scale(c.$red, $lightness: -20%)};
+    --red-1: #{c.$error};
+    --red-2: #{color.scale(c.$error, $lightness: -5%)};
+    --red-3: #{color.scale(c.$error, $lightness: -10%)};
+    --red-4: #{color.scale(c.$error, $lightness: -15%)};
+    --red-5: #{color.scale(c.$error, $lightness: -20%)};
 
     --green-1: #{c.$green};
     --green-2: #{color.scale(c.$green, $lightness: -5%)};
