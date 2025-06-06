@@ -92,10 +92,10 @@ body {
     --text-5: #{c.$outline}; /* muted channels/chats and timestamps */
 
     /* background and dark colors */
-    --bg-1: #{color.change(c.$surfaceContainerHigh, $alpha: if($transparency, 0.58, 1))}; /* dark buttons when clicked */
-    --bg-2: #{color.change(c.$surfaceContainer, $alpha: if($transparency, 0.58, 1))}; /* dark buttons */
+    --bg-1: #{color.change(c.$surfaceContainerHighest, $alpha: if($transparency, 0.58, 1))}; /* dark buttons when clicked */
+    --bg-2: #{color.change(c.$surfaceContainerHigh, $alpha: if($transparency, 0.58, 1))}; /* dark buttons */
     --bg-3: #{color.change(c.$surface, $alpha: if($transparency, 0.58, 1))}; /* spacing, secondary elements */
-    --bg-4: #{color.change(c.$surface, $alpha: if($transparency, 0.1, 1))}; /* main background color */
+    --bg-4: #{color.change(c.$surfaceContainer, $alpha: if($transparency, 0.1, 1))}; /* main background color */
     --hover: #{color.change(c.$onSurface, $alpha: 0.08)}; /* channels and buttons when hovered */
     --active: #{color.change(c.$onSurface, $alpha: 0.1)}; /* channels and buttons when clicked or selected */
     --active-2: #{color.change(c.$onSurface, $alpha: 0.2)}; /* extra state for transparent buttons */
@@ -137,9 +137,9 @@ body {
     --offline: var(--text-4); /* change to #83838b for default offline color */
 
     /* border colors */
-    --border-light: #{color.change(c.$outline, $alpha: 0.05)}; /* light border color */
-    --border: #{color.change(c.$outline, $alpha: 0.1)}; /* normal border color */
-    --button-border: #{color.change(c.$outline, $alpha: 0.05)}; /* neutral border color of buttons */
+    --border-light: #{color.change(c.$outline, $alpha: 0)}; /* light border color */
+    --border: #{color.change(c.$outline, $alpha: 0)}; /* normal border color */
+    --button-border: #{color.change(c.$outline, $alpha: 0)}; /* neutral border color of buttons */
 
     /* base colors */
     --red-1: #{c.$error};
