@@ -1,5 +1,7 @@
 # caelestia-discord
 
+## THIS REPO IS ARCHIVED IN FAVOUR OF https://github.com/caelestia-dots/caelestia
+
 ![showcase](https://github.com/caelestia-dots/readme/blob/main/discord/showcase.gif)
 
 BetterDiscord theme integration for my caelestia dotfiles.
